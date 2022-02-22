@@ -77,6 +77,5 @@ public class PlayerController {
         }
         playerService.deletePlayer(playerId);
         return "The deleted player is : " + playerId;
-
     }
 }
