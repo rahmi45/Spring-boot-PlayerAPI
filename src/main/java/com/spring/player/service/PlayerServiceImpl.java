@@ -23,25 +23,29 @@ public class PlayerServiceImpl implements PlayerService{
 
 	@Override
 	public List<Player> allPlayer() {
-		return playerDao.getPlayers();
+		//return playerDao.getPlayers();
+		return playerDao.findAll();
 	}
 
 
 	@Override
 	public void savePlayer(Player player) {
-		playerDao.addPlayer(player);
+		//playerDao.addPlayer(player);
+		playerDao.save(player);
 		
 	}
 
 	@Override
 	public Player showPlayer(int id) {
-		return playerDao.getPlayer(id);
+		//return playerDao.getPlayer(id);
+		return playerDao.findById(id).get();
 	}
 
 
 	@Override
 	public void deletePlayer(int id) {
-		playerDao.removePlayer(id);
+		//playerDao.removePlayer(id);
+		playerDao.deleteById(id);
 		
 	}
 
